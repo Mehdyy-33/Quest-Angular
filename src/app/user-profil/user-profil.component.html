@@ -1,0 +1,10 @@
+
+<img [src]="user.photo" [alt]="user.name" />
+<p>Lastname : {{user.name}}</p>
+<p>Firstname : {{user.firstName}}</p>
+<p *ngIf="this.isButtonVisible">Age : {{user.age}}</p>
+<p>{{user.quote}}</p>
+
+<input type="text" [(ngModel)]="user.quote">
+<button  (click)="this.isButtonVisible = !isButtonVisible">
+
