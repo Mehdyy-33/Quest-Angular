@@ -1,3 +1,1 @@
-<app-face-snap [facesnap]="mySnap"></app-face-snap>
-<app-face-snap [facesnap]="mySecondSnap"></app-face-snap>
-<app-face-snap [facesnap]="myThirdSnap"></app-face-snap>
+<app-face-snap *ngFor="let facesnapArrayElement of faceSnaps " [facesnap]="facesnapArrayElement"></app-face-snap>

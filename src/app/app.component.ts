@@ -7,31 +7,37 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  mySnap!: FaceSnap;
-  mySecondSnap!:FaceSnap;
-  myThirdSnap!:FaceSnap;
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  faceSnaps!: FaceSnap[];
 
   ngOnInit() {
-    this.mySnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      new Date(),
-      0,
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    );  
-    this.mySecondSnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      new Date(),
-      0,
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    );  
-    this.myThirdSnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      new Date(),
-      0,
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-    );
+    this.faceSnaps = [{
+      title: 'Archibald',
+      description:'Mon meilleur ami depuis tout petit !',
+      createdDate: new Date(),
+     snaps: 0,
+      imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      localisation:"bord",
+    }, 
+
+    {
+      title: 'Archibald',
+      description:'Mon meilleur ami depuis tout petit !',
+      createdDate: new Date(),
+     snaps: 0,
+      imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      localisation:"paris",
+    }, 
+
+    {
+      title: 'Archibald',
+      description:'Mon meilleur ami depuis tout petit !',
+      createdDate: new Date(),
+     snaps: 0,
+      imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      localisation:"alger",
+    },]
   }
 }
