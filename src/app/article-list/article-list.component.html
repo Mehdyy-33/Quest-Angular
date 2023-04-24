@@ -1,0 +1,4 @@
+<div *ngFor="let article of articleList">
+    <h3>{{article.title}} - {{article.id}}</h3>
+    <a [routerLink]="['/article', article.id]">Naviguer</a>
+</div>
