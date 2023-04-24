@@ -1,0 +1,69 @@
+<form (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="firstname-order">firstname</label>
+    <input
+      id="firstname-order"
+      name="firstname-order"
+      type="text"
+      [(ngModel)]="model.firstname"
+      #firstname="ngModel"
+      required
+      minlegth="3"
+      maxlength="15"
+    />
+  </fieldset>
+  <div *ngIf="firstname.errors">
+    <span *ngIf="firstname.errors?.['maxlength']">
+      Le prenom ne doit pas dépasser 15 caractères.</span
+    >
+    <span *ngIf="firstname.errors?.['minlegth']">
+      Le prenom doit comporter au moins 3 caractères</span
+    >
+    <span *ngIf="firstname.errors?.['required']">
+        Le prenom est requis</span
+      >
+  </div>
+  <fieldset>
+    <label for="lastname-order">lastname</label>
+    <input
+      id="lastname-order"
+      name="lastname-order"
+      type="text"
+      [(ngModel)]="model.lastname"
+      #lastname="ngModel"
+      required
+      minlegth="3"
+      maxlength="15"
+    />
+  </fieldset>
+  <div *ngIf="lastname.errors">
+    <span *ngIf="lastname.errors?.['maxlength']">
+      Le nom de famille ne doit pas dépasser 15 caractères.
+    </span>
+    <span *ngIf="lastname.errors?.['minlegth']">
+      Le nom de famille doit comporter au moins 3 caractères.</span
+    >
+    <span *ngIf="lastname.errors?.['required']">
+      Le nom de famille est requis</span
+    >
+  </div>
+  <fieldset>
+    <label for="email-order">email</label>
+    <input
+      id="email-order"
+      name="email-order"
+      type="text"
+      [(ngModel)]="model.email"
+      #email="ngModel"
+      required
+      email=""
+    />
+  </fieldset>
+  <div *ngIf="email.errors">
+    <span *ngIf="email.errors?.['email']"> L'email est invalide</span>
+    <span *ngIf="email.errors?.['required']"> L'email est requis</span>
+  </div>
+
+  <button type="reset">Restaurer</button>
+  <button type="submit">Sauvegarder</button>
+</form>
