@@ -1,0 +1,36 @@
+<form (ngSubmit)="startCooking()">
+  <h4>My Kitchen</h4>
+  <label for="flour">Flour quantity :</label>
+  <input id="flour" type="number" name="flour" [(ngModel)]="flourQuantity" />
+
+  <label for="salt">Salt quantity :</label>
+  <input id="salt" type="number" name="salt" [(ngModel)]="saltQuantity" />
+
+  <label for="sugar">Sugar quantity :</label>
+  <input id="sugar" type="number" name="sugar" [(ngModel)]="sugarQuantity" />
+
+  <label for="egg">Egg quantity :</label>
+  <input id="egg" type="number" name="egg" [(ngModel)]="eggQuantity" />
+
+  <label for="number">Number of cookies :</label>
+  <input
+    id="number"
+    type="number"
+    name="number"
+    [(ngModel)]="numberOfCookies"
+  />
+
+  <div>
+    <button type="submit">Cuisiner 🍪</button>
+  </div>
+</form>
+
+<app-magic-oven
+  [startCooking]="cook"
+  [numberOfCookies]="numberOfCookies"
+  [flour]="flourQuantity"
+  [salt]="saltQuantity"
+  [sugar]="sugarQuantity"
+  [egg]="eggQuantity"
+>
+</app-magic-oven>
