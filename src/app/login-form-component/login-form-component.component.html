@@ -1,0 +1,36 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+    <fieldset>
+      <label for="email">email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        required
+        email
+      />
+      <span *ngIf="email.valid">
+        Login validé
+      </span>
+    </fieldset>
+    <fieldset>
+        <label for="password">password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          [(ngModel)]="model.password"
+          #password="ngModel"
+          required
+          minlength="6"
+        />
+
+        <span *ngIf="password.errors?.['minlength']">
+            le mot de passe doit contenir 6 caractéres
+        </span>
+           
+
+    </fieldset>
+      <button type="submit">Sauvegarder</button>
+</form>
