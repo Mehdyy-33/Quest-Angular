@@ -1,0 +1,21 @@
+<h1>Hello Guys</h1>
+<div class="developer-card">
+  <div class="developer-infos">
+    <span class="developer-fisrtname"
+      >{{ developerList.firstName }} {{ developerList.lastName }}</span
+    >
+    <br />
+    <span>{{ developerList.age }} </span>
+    <br />
+
+    <span>{{ developerList.gender }}</span>
+    <br />
+
+    <span class="developer-bio">{{ developerList.bio }} </span>
+  </div>
+  <div class="skill-card-container">
+    <div *ngFor="let skill of developerList.skills">
+      <app-skill-component [skill]="skill"> </app-skill-component>
+    </div>
+  </div>
+</div>
